@@ -1,0 +1,63 @@
+#+STARTUP: beamer
+#+DESCRIPTION: 
+#+KEYWORDS: 
+#+LANGUAGE:  en
+#+OPTIONS:   H:3 toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LINK_UP:
+#+LINK_HOME:
+
+#+COMMENT: Latex & Beamer Setup
+#+LaTeX_CLASS: beamer
+#+BEAMER_THEME: Wisconsin [white,pdflogo]
+#+LaTeX_CLASS_OPTIONS: [10pt]
+#+LATEX_HEADER: \usepackage{listings}
+#+LATEX_HEADER: \usepackage[ruled,vlined]{algorithm2e} % for algorithms
+#+LATEX_HEADER: \usepackage{multirow}
+#+BEAMER_HEADER: \setbeamertemplate{bibliography item}[text]
+#+BEAMER_HEADER: \AtBeginSection[]{\begin{frame}[noframenumbering,plain]{Outline}\tableofcontents[currentsection]\end{frame}}
+#+COMMENT: For special subsection pages
+#+BEAMER_HEADER: \setbeamertemplate{subsection page}
+#+BEAMER_HEADER: {
+#+BEAMER_HEADER:   \begin{centering}
+#+BEAMER_HEADER:     \vskip1em\par
+#+BEAMER_HEADER:     \begin{beamercolorbox}[sep=4pt,center]{part title}
+#+BEAMER_HEADER:       \usebeamerfont{section title}\insertsubsection\par
+#+BEAMER_HEADER:     \end{beamercolorbox}
+#+BEAMER_HEADER:   \end{centering}
+#+BEAMER_HEADER: }
+
+
+#+TITLE:     Title
+#+AUTHOR:    Matthew J. Gidden
+#+EMAIL:     matthew.gidden@gmail.com
+#+DATE:      Date
+#+COMMENT: This is required because org-mode does not support short titles, etc.
+#+BEAMER_HEADER: \title[small title]{Title}
+#+BEAMER_HEADER: \author[M. J. Gidden]{Matthew J. Gidden}
+#+BEAMER_HEADER: \institute[UW-Madison]{University of Wisconsin-Madison}
+#+BEAMER_HEADER: \date[xx.xx.xxxx]{Date}
+
+#+COMMENT: This is required because org-mode does not support frame options in their TOC 
+*** Outline
+  :PROPERTIES:
+  :BEAMER_opt: plain, noframenumbering
+  :END:
+#+TOC: headlines 1
+
+* Introduction
+Foo
+
+** Questions?
+#+BEAMER: \frame{\subsectionpage}
+
+# *** References
+#   :PROPERTIES:
+#   :BEAMER_opt: allowframebreaks, plain, noframenumbering
+#   :END:
+#    \bibliographystyle{plain}
+#    \bibliography{pres}
+
